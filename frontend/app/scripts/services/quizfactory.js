@@ -2,7 +2,7 @@
 angular.module('frontendApp')
   .factory('quizfactory', ['$resource', function($resource){
 
-    return $resource('http://localhost:5000/quiz/scoreboard', {}, {   
+    return $resource('http://kvissmester.herokuapp.com/quiz/scoreboard', {}, {   
     });   
 
   }]);

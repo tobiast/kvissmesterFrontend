@@ -20,6 +20,10 @@ angular.module('frontendApp', [
         templateUrl: 'views/questions.html',
         controller: 'QuestionsCtrl'
       })
+      .when('/question', {
+        templateUrl: 'views/question.html',
+        controller: 'QuestionsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
