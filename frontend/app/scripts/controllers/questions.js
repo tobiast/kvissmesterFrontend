@@ -5,7 +5,7 @@ angular.module('frontendApp')
   
 
   $scope.questions = questionfactory.get({}, function() {
-    console.log('question ' + $scope.questions)
+   // console.log('question ' + $scope.questions)
   });
 
 
