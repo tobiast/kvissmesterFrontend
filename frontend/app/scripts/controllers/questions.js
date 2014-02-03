@@ -2,10 +2,12 @@
 
 angular.module('frontendApp')
   .controller('QuestionsCtrl', function ($scope, $http, $resource, questionfactory) {
-   
+  
+
   $scope.questions = questionfactory.get({}, function() {
-  	 console.log("getting: " + $scope.questions[0].id)
+    console.log('question ' + $scope.questions)
   });
+
 
  $scope.processForm = function() {
 	$http({
@@ -24,6 +26,5 @@ angular.module('frontendApp')
             }
         });
 	};
-
 
   });

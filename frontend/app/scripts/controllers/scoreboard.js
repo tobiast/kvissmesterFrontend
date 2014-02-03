@@ -4,9 +4,8 @@ angular.module('frontendApp')
   .controller('ScoreboardCtrl', function ($scope, $http, $resource, quizfactory) {
 
     $scope.scores = quizfactory.get({}, function() {
-    	console.log($scope.scoreboard.teamname)
+    	console.log('teamname ' + $scope.scores.scoreboard[0].teamName)
 	});
-
-  	
+	
   });
 

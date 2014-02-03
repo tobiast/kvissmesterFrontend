@@ -3,9 +3,10 @@
 </div>
 
 <div ng-controller="QuestionsCtrl">
+
 	<table class="table table-striped"> 
 		<tr> <th> Name</th> <th> Score</th><th> Category</th> <th> Timelimit</th> <th>Alternatives</th></tr>
-			<tr ng-repeat="question in questions">
+			<tr ng-repeat="question in questions.questions">
 			<td>{{question.questionText}}</td>
 			<td>{{question.numberOfPoints}}</td>
 			<td>{{question.category}}</td>
