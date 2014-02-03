@@ -1,0 +1,12 @@
+<div class="header">
+  <h3 class="text-muted">Scoreboard</h3>
+</div>
+<div ng-controller="ScoreboardCtrl">
+
+<table class="table table-striped"> 
+<tr> <th> Name</th> <th> Score</th> </tr>
+<tr ng-repeat="scores in scores.scoreboard"><td>{{scores.teamName}}</td><td>{{scores.points}}</td></tr> 	
+</table>
+
+</div>
+
