@@ -89,3 +89,22 @@ body {
         border-bottom: 0;
     }
 }
+
+ul.unstyled, ol.unstyled {
+    padding: 0;
+    margin-left: 0;
+    list-style: none;
+}
+
+label {
+    font-weight: normal;
+    cursor: pointer;
+}
+
+label.answer {
+    width: 200px;
+}
+
+li.question-alternative span.glyphicon {
+    vertical-align: middle;
+}

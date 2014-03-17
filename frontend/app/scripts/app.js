@@ -22,7 +22,7 @@ angular.module('frontendApp', [
       })
       .when('/question', {
         templateUrl: 'views/question.html',
-        controller: 'QuestionsCtrl'
+        controller: 'QuestionCtrl'
       })
       .otherwise({
         redirectTo: '/'

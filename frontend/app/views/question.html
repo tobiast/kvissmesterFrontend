@@ -7,54 +7,49 @@
 <h1  class="text-muted">Register a question!</h1>
 </div>
 
-<form ng-submit="processForm()">
-		<!-- NAME -->
-		<div id="name-group" class="form-group">
-			<label>ID</label>
-			<input type="text" name="id" class="form-control" placeholder="The id of the question" ng-model="formData.id">
+<div ng-controller="QuestionCtrl">
+	<div id="name-group" class="form-group">
+		<label>Question text</label>
+		<input type="text" name="questionText" class="form-control" placeholder="The question" ng-model="question.questionText" autofocus>
 
-			<label>Question text</label>
-			<input type="text" name="questionText" class="form-control" placeholder="The question" ng-model="formData.questionText">
+		<label>Time limit</label>
+		<select class="form-control" name="timeLimitSec" ng-model="question.timeLimitSec">
+		<option>30</option>
+		<option>60</option>
+		<option>120</option>
+		</select>
 
-			<label>Time limit</label>
-			<select class="form-control" name="timeLimitSec" ng-model="formData.timeLimitSec">
-			<option>30</option>
-			<option>60</option>
-			<option>120</option>
-			</select>
+		<label>Number of points</label>
+		<select class="form-control" name="numberOfPoints" ng-model="question.numberOfPoints">
+		<option>10</option>
+		<option>20</option>
+		<option>30</option>
+		<option>40</option>
+		<option>50</option>
+		</select>
+	</div>
+	<div id="alternatives-group" class="form-group">
+		<label>Answer alternatives (radio marks correct)</label>
+		<ul class="unstyled">
+			<li ng-repeat="alternative in question.alternatives" class="question-alternative">
+				<label class="answer">
+					<input type="radio" ng-model="question.correctAnswer" value="{{alternative.id}}" />
+					{{alternative.answer}}
+				</label>
+				<span class="glyphicon glyphicon-trash" ng-click="deleteAlternative(alternative)"></span>
+			</li>
+		</ul>
+		<form ng-submit="addAlternative()" class="ng-pristine ng-valid">
+			<input type="text" ng-model="answer" size="30" placeholder="answer alternative" class="ng-pristine ng-valid">
+			<input class="btn-primary" type="submit" value="add">
+		</form>
+	</div>
 
-			<label>Number of points</label>
-			<select class="form-control" name="numberOfPoints" ng-model="formData.numberOfPoints">
-			<option>10</option>
-			<option>20</option>
-			<option>30</option>
-			<option>40</option>
-			<option>50</option>
-			</select>
-
-			<label>Correct answer</label>
-			<select class="form-control" name="correctAnswer" ng-model="formData.correctAnswer">
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-			</select>
-			<span class="help-block"></span>
-		</div>
-		<div id="alternatives-group" class="form-group">
-			<label>Alternatives</label>
-			<input type="text" name="alt1" class="form-control" placeholder="The first of the alternative answers" ng-model="formData.alt1">
-			<input type="text" name="alt2" class="form-control" placeholder="The second of the alternative answers" ng-model="formData.alt2">
-			<input type="text" name="alt2" class="form-control" placeholder="The third of the alternative answers" ng-model="formData.alt3">
-			<span class="help-block"></span>
-		</div>
-
-		<!-- SUBMIT BUTTON -->
-		<button type="submit" class="btn btn-success btn-lg btn-block">
-			<span class="glyphicon glyphicon-flash"></span> Submit!
-		</button>
+	<!-- SUBMIT BUTTON -->
+	<form ng-submit="saveQuestion()">
+	<button type="submit" class="btn btn-success btn-lg btn-block" >
+		<span class="glyphicon glyphicon-flash"></span> Submit!
+	</button>
 	</form>
-
-	<pre>
-		{{ formData }}
-	</pre>
+</div>
 

@@ -2,7 +2,7 @@
 angular.module('frontendApp')
   .factory('quizfactory', ['$resource', function($resource){
 
-    return $resource('http://kvissmester.herokuapp.com/quiz/scoreboard', {}, {   
+    return $resource('http://webtutorialbackend.herokuapp.com/quiz/scoreboard', {}, {   
     	
     });   
 
