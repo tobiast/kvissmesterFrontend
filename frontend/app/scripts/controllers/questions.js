@@ -1,15 +1,9 @@
 'use strict';
 
 angular.module('frontendApp')
-  .controller('QuestionsCtrl', function ($scope, $http, $resource, questionfactory) {
-    $scope.newQuestion = {
-      alternatves: []
-    }; 
+  .controller('QuestionsCtrl', function ($scope, $http, $resource, Question) {
 
-    $scope.questions = questionfactory.get({}, function() {
-      console.log($scope.questions.questions);
-     //console.log('question ' + $scope.questions.questions.id);
-    });
+    $scope.questions = Question.query();
 
     $scope.addAlternative = function() {
       $scope.newQuestion.alternatives.push($scope.alternativeText);

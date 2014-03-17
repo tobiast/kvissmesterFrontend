@@ -1,15 +1,15 @@
 'use strict';
 
 angular.module('frontendApp')
-  .controller('QuestionCtrl', function ($scope, $http, $resource) {
-    $scope.question = {
-      id: null,
+  .controller('QuestionCtrl', function ($scope, $http, $resource, Question) {
+
+    $scope.question = new Question({
       questionText: null,
       timeLimitSec: 30,
       numberOfPoints:  10,
       correctAnswer: null,
       alternatives: []
-    }; 
+    }); 
 
     $scope.addAlternative = function() {
       $scope.question.alternatives.push({
@@ -34,23 +34,10 @@ angular.module('frontendApp')
     };
 
     $scope.saveQuestion = function() {
-      console.info("Skal lagre spørsmål");
+      console.info("Saving question");
       console.info($scope.question);
-      $http({
-            method  : 'POST',
-            url     : 'http://192.168.50.94:5000/admin/questions',
-            data    : $scope.question,  
-            headers : { 'Content-Type': 'application/json' }
-          })
-          .success(function(data) {
-              console.log(data);
+      $scope.question.$save();
 
-              if (!data.success) {
-                  $scope.errorName = data.errors.name;
-                  $scope.errorSuperhero = data.errors.superheroAlias;
-              } else {
-                  $scope.message = data.message;
-              }
-          });
+      console.info("Question got id: " + $scope.question.id);
     }
   });
