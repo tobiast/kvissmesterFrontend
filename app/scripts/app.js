@@ -9,8 +9,8 @@ angular.module('frontendApp', [
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/scoreboard.html',
+        controller: 'ScoreboardCtrl'
       })
       .when('/scoreboard', {
         templateUrl: 'views/scoreboard.html',
