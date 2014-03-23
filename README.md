@@ -1,26 +1,45 @@
-kvissmesterFrontend
-===================
+kvissmester-frontend
+====================
 
-Frontend for kvissmesteren. 
+Frontend for kvissmesteren.
 
-1) Installer node: 
-http://nodejs.org
+1. Installer node:
+```
+brew install node # mac
+sudo apt-get install node # ubuntu
+http://nodejs.org # eller hent herfra
+```
 
-2) Sjekk ut koden fra repo. 
+2. Installer compass:
+```
+gem install compass
+```
+
+3. Installer yeoman:
+```
+npm install -g yo # må kanskje bruke sudo
+```
+
+4. Sjekk ut koden fra repo:
+```
 git clone https://github.com/tobiast/kvissmesterFrontend.git
+cd kvissmesterFrontend
+```
 
-Gå inn mappen 
- 
-3) Installere yo.  
-sudo npm install -g yo
-
-4)Installer grunt lokalt
-sudo npm install grunt --save-dev 
+5. Installer grunt lokalt:
+```
+npm install grunt --save-dev # må kanskje bruke sudo
 npm install
+```
 
-4) Kjør opp sever: 
+6. Installer bower components:
+```
+bower install
+```
+
+7. Kjør opp sever:
+```
 grunt serve
+```
 
-gå til http://localhost:9000/#/scoreboard 
-
-
+Gå til http://localhost:9000/#/scoreboard
