@@ -3,21 +3,25 @@ kvissmester-frontend
 
 Frontend for kvissmesteren.
 
-1. Installer node:
+1. Installer ruby og compass:
+```
+# trengs for å serve koden under utvikling
+brew install ruby # mac
+sudo apt-get install ruby # ubuntu
+# https://www.ruby-lang.org/ eller sjekk her
+gem install compass # en liten sak for å kjøre
+```
+
+2. Installer node:
 ```
 brew install node # mac
 sudo apt-get install node # ubuntu
-http://nodejs.org # eller hent herfra
+# http://nodejs.org eller sjekk her
 ```
 
-2. Installer compass:
+3. Installer noen node-ting globalt:
 ```
-gem install compass
-```
-
-3. Installer yeoman:
-```
-npm install -g yo # må kanskje bruke sudo
+npm install -g grunt-cli bower # må kanskje bruke sudo
 ```
 
 4. Sjekk ut koden fra repo:
