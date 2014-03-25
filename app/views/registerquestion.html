@@ -1,13 +1,13 @@
  <div class="header">
   <ul class="nav nav-pills pull-right">
     <li> <a ng-href="#/questions">Questions</a></li>
-    <li class="active"><a ng-href="#/question">Register a new question</a></li>
+    <li class="active"><a ng-href="#/registerquestion">Register a new question</a></li>
     <li><a ng-href="#/scoreboard">Scoreboard</a></li>
   </ul>
 <h1  class="text-muted">Register a question!</h1>
 </div>
 
-<div ng-controller="QuestionCtrl">
+<div ng-controller="RegisterQuestionCtrl">
 	<div id="name-group" class="form-group">
 		<label>Question text</label>
 		<input type="text" name="questionText" class="form-control" placeholder="The question" ng-model="question.questionText" autofocus>

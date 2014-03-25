@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('frontendApp')
-  .controller('QuestionCtrl', function ($scope, $http, $resource, Question) {
+  .controller('RegisterQuestionCtrl', function ($scope, $http, $resource, Question) {
 
     $scope.question = new Question({
       questionText: null,
