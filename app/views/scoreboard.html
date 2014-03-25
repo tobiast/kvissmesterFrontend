@@ -1,7 +1,5 @@
 <div class="header">
 	 <ul class="nav nav-pills pull-right">
-    <li> <a ng-href="#/questions">Questions</a></li>
-    <li ><a ng-href="#/registerquestion">Register a new question</a></li>
     <li class="active"><a ng-href="#/scoreboard">Scoreboard</a></li>
   </ul>
   <h1 class="text-muted">Scoreboard</h1>
@@ -9,10 +7,7 @@
 
 <div ng-controller="ScoreboardCtrl">
 
-<table class="table table-striped"> 
-<tr> <th> Name</th> <th> Score</th> </tr>
-<tr ng-repeat="scores in scores.scoreboard"><td>{{scores[0]}}</td><td>{{scores[1]}}</td></tr> 	
-</table>
+<!-- Her må du kalle funksjoner i scoreboard kontroller for å vise resultatene-->
 
 </div>
 
